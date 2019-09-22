@@ -11,16 +11,25 @@ class App extends Component{
   }
 
   increment = () =>{
-    console.log("increment");
-    let {count} =this.state;
-    this.setState({count: ++count})
+    // console.log("increment");
+    // let {count} =this.state;
+    // this.setState({count: ++count})
+    this.setState( (pervState) => {
+      return {
+        count: pervState.count + 1
+      }
+    });
   }
 
   decrement = () => {
-    console.log("decrement");
-    
-    let {count} =this.state;
-    this.setState( {count: --count});
+    // console.log("decrement");
+    // let {count} =this.state;
+    // this.setState( {count: --count});
+    this.setState( (pervState) => {
+      return {
+        count: pervState.count - 1
+      }
+    });
   }
   render(){
     let {count} =this.state;
